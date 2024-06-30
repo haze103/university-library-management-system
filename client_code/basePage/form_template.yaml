@@ -1,0 +1,19 @@
+is_package: true
+container:
+  type: HtmlTemplate
+  properties: {html: '@theme:standard-page.html'}
+components:
+- type: ColumnPanel
+  properties: {background: '#800000'}
+  name: secContentPanel
+  layout_properties: {slot: default}
+  components: []
+- name: lblWebsiteName
+  properties: {text: University Library Management System, bold: true, align: left, icon: '', font_size: 20}
+  type: Label
+  layout_properties: {slot: title}
+  data_bindings: []
+- name: imgLogo
+  properties: {source: _/theme/polytechnic_university_of_the_philippines_logo.png, height: 43}
+  type: Image
+  layout_properties: {slot: top-left-btn}

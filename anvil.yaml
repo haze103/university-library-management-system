@@ -1,0 +1,363 @@
+allow_embedding: false
+package_name: University_Library_Management_System
+db_schema:
+  tblbookauthor:
+    client: none
+    server: full
+    columns:
+    - name: intBookID
+      admin_ui: {width: 200, order: 0}
+      type: number
+    - name: intAuthorID
+      admin_ui: {width: 200, order: 1}
+      type: number
+    title: tblBookAuthor
+  tblstudentinformation:
+    client: none
+    server: full
+    columns:
+    - name: strStudentID
+      admin_ui: {width: 200, order: 0}
+      type: string
+    - name: strStudentFirstName
+      admin_ui: {width: 200, order: 1}
+      type: string
+    - name: strStudentMiddleName
+      admin_ui: {width: 200, order: 2}
+      type: string
+    - name: strStudentLastName
+      admin_ui: {width: 200, order: 3}
+      type: string
+    - name: strDepartmentCode
+      admin_ui: {width: 200, order: 4}
+      type: string
+    title: tblStudentInformation
+  tblstatus:
+    client: none
+    server: full
+    columns:
+    - name: intStatusID
+      admin_ui: {width: 200, order: 0}
+      type: number
+    - name: strStatusName
+      admin_ui: {width: 200, order: 1}
+      type: string
+    title: tblStatus
+  tblstudentreservationlog:
+    client: none
+    server: full
+    columns:
+    - name: intStudentReservationLogID
+      admin_ui: {width: 200, order: 0}
+      type: number
+    - name: intStudentUserID
+      admin_ui: {width: 200, order: 1}
+      type: number
+    - name: intBookID
+      admin_ui: {width: 200, order: 2}
+      type: number
+    - name: datDateTimeReserved
+      admin_ui: {width: 200, order: 3}
+      type: datetime
+    - name: datDateTimeCancelled
+      admin_ui: {width: 200, order: 4}
+      type: datetime
+    - name: intBorrowerLogID
+      admin_ui: {width: 200, order: 5}
+      type: number
+    title: tblStudentReservationLog
+  tblfacultyinformation:
+    client: none
+    server: full
+    columns:
+    - name: strFacultyID
+      admin_ui: {width: 200, order: 0}
+      type: string
+    - name: strFacultyFirstName
+      admin_ui: {width: 200, order: 1}
+      type: string
+    - name: strFacultyMiddleName
+      admin_ui: {width: 200, order: 2}
+      type: string
+    - name: strFacultyLastName
+      admin_ui: {width: 200, order: 3}
+      type: string
+    - name: strDepartmentCode
+      admin_ui: {width: 200, order: 4}
+      type: string
+    title: tblFacultyInformation
+  tblloststatus:
+    client: none
+    server: full
+    columns:
+    - name: intStatusLostID
+      admin_ui: {width: 200, order: 0}
+      type: number
+    - name: datDateTimeLost
+      admin_ui: {width: 200, order: 1}
+      type: datetime
+    - name: intPaymentID
+      admin_ui: {width: 200, order: 2}
+      type: number
+    title: tblLostStatus
+  tbladminaccount:
+    client: none
+    server: full
+    columns:
+    - name: intAdminUserID
+      admin_ui: {width: 200, order: 0}
+      type: number
+    - name: strAdminUserEmail
+      admin_ui: {width: 200, order: 1}
+      type: string
+    - name: strAdminUserPassword
+      admin_ui: {width: 200, order: 2}
+      type: string
+    - name: strEmployeeID
+      admin_ui: {width: 200, order: 3}
+      type: string
+    - name: datAdminUserDateCreated
+      admin_ui: {width: 200, order: 4}
+      type: datetime
+    title: tblAdminAccount
+  tblpayment:
+    client: none
+    server: full
+    columns:
+    - name: intPaymentID
+      admin_ui: {width: 200, order: 0}
+      type: number
+    - name: dblAmountPayable
+      admin_ui: {width: 200, order: 1}
+      type: number
+    - name: strPaymentMethod
+      admin_ui: {width: 200, order: 2}
+      type: string
+    - name: datDateTimePaymentDone
+      admin_ui: {width: 200, order: 3}
+      type: datetime
+    title: tblPayment
+  tblfacultyreservationlog:
+    client: none
+    server: full
+    columns:
+    - name: intFacultyReservationLogID
+      admin_ui: {width: 200, order: 0}
+      type: number
+    - name: intFacultyUserID
+      admin_ui: {width: 200, order: 1}
+      type: number
+    - name: intBookID
+      admin_ui: {width: 200, order: 2}
+      type: number
+    - name: datDateTimeReserved
+      admin_ui: {width: 200, order: 3}
+      type: datetime
+    - name: datDateTimeCancelled
+      admin_ui: {width: 200, order: 4}
+      type: datetime
+    - name: intBorrowerLogID
+      admin_ui: {width: 200, order: 5}
+      type: number
+    title: tblFacultyReservationLog
+  tblborrowerlog:
+    client: none
+    server: full
+    columns:
+    - name: intBorrowerLogID
+      admin_ui: {order: 0, width: 200}
+      type: number
+    - name: datDateTimeBorrowed
+      admin_ui: {width: 200, order: 1}
+      type: datetime
+    - name: datDateTimeToReturn
+      admin_ui: {width: 200, order: 2}
+      type: datetime
+    - name: intLogStatusID
+      admin_ui: {width: 200, order: 3}
+      type: number
+    - name: intAdminUserID
+      admin_ui: {width: 200, order: 4}
+      type: number
+    title: tblBorrowerLog
+  tblcollege:
+    client: none
+    server: full
+    columns:
+    - name: strCollegeCode
+      admin_ui: {order: 0, width: 200}
+      type: string
+    - name: strCollegeName
+      admin_ui: {order: 1, width: 200}
+      type: string
+    title: tblCollege
+  tblcategory:
+    client: none
+    server: full
+    columns:
+    - name: intCategoryID
+      admin_ui: {width: 200, order: 0}
+      type: number
+    - name: strCategoryName
+      admin_ui: {width: 200, order: 1}
+      type: string
+    title: tblCategory
+  tblborrowerlogstatus:
+    client: none
+    server: full
+    columns:
+    - name: intLogStatusID
+      admin_ui: {width: 200, order: 0}
+      type: number
+    - name: datDateTimeReturned
+      admin_ui: {width: 200, order: 1}
+      type: datetime
+    - name: intStatusLostID
+      admin_ui: {width: 200, order: 3}
+      type: number
+    - name: intStatusID
+      admin_ui: {width: 200, order: 2}
+      type: number
+    title: tblBorrowerLogStatus
+  tblbook:
+    client: none
+    server: full
+    columns:
+    - name: intBookID
+      admin_ui: {width: 200, order: 0}
+      type: number
+    - name: intISBN
+      admin_ui: {width: 200, order: 1}
+      type: string
+    - name: strBookTitle
+      admin_ui: {width: 200, order: 2}
+      type: string
+    - name: datDatePublished
+      admin_ui: {width: 200, order: 4}
+      type: datetime
+    - name: dblBookPrice
+      admin_ui: {width: 200, order: 5}
+      type: number
+    - name: strBookStatus
+      admin_ui: {width: 200, order: 6}
+      type: string
+    - name: intCategoryID
+      admin_ui: {order: 3, width: 200}
+      type: number
+    title: tblBook
+  tblloginsession:
+    client: none
+    server: full
+    columns:
+    - name: strSessionID
+      admin_ui: {width: 200, order: 0}
+      type: string
+    - name: intStudentUserID
+      admin_ui: {width: 200, order: 1}
+      type: number
+    - name: datLastLogin
+      admin_ui: {width: 200, order: 2}
+      type: datetime
+    title: tblLoginSession
+  tbldepartment:
+    client: none
+    server: full
+    columns:
+    - name: strDepartmentCode
+      admin_ui: {order: 0, width: 200}
+      type: string
+    - name: strCollegeCode
+      admin_ui: {order: 1, width: 200}
+      type: string
+    - name: strDepartmentName
+      admin_ui: {order: 2, width: 200}
+      type: string
+    title: tblDepartment
+  tblemployeeinformation:
+    client: none
+    server: full
+    columns:
+    - name: strEmployeeID
+      admin_ui: {width: 200, order: 0}
+      type: string
+    - name: strEmployeeFirstName
+      admin_ui: {width: 200, order: 1}
+      type: string
+    - name: strEmployeeMiddleName
+      admin_ui: {width: 200, order: 2}
+      type: string
+    - name: strEmployeeLastName
+      admin_ui: {width: 200, order: 3}
+      type: string
+    title: tblEmployeeInformation
+  tblstudentaccount:
+    client: none
+    server: full
+    columns:
+    - name: intStudentUserID
+      admin_ui: {width: 200, order: 0}
+      type: number
+    - name: strStudentUserEmail
+      admin_ui: {order: 1, width: 200}
+      type: string
+    - name: strStudentUserPassword
+      admin_ui: {width: 200, order: 2}
+      type: string
+    - name: strStudentID
+      admin_ui: {width: 200, order: 3}
+      type: string
+    - name: datStudentUserDateCreated
+      admin_ui: {width: 200, order: 4}
+      type: datetime
+    title: tblStudentAccount
+  tblauthor:
+    client: none
+    server: full
+    columns:
+    - name: intAuthorID
+      admin_ui: {width: 200, order: 0}
+      type: number
+    - name: strAuthorFirstName
+      admin_ui: {width: 200, order: 1}
+      type: string
+    - name: strAuthorLastName
+      admin_ui: {width: 200, order: 2}
+      type: string
+    title: tblAuthor
+  tblfacultyaccount:
+    client: none
+    server: full
+    columns:
+    - name: intFacultyUser
+      admin_ui: {width: 200, order: 0}
+      type: number
+    - name: strFacultyUserEmail
+      admin_ui: {width: 200, order: 1}
+      type: string
+    - name: strFacultyUserPassword
+      admin_ui: {width: 200, order: 2}
+      type: string
+    - name: strFacultyID
+      admin_ui: {width: 200, order: 3}
+      type: string
+    - name: datFacultyUserDateCreated
+      admin_ui: {width: 200, order: 4}
+      type: datetime
+    title: tblFacultyAccount
+startup: {type: form, module: basePage}
+name: Clone of Clone of University Library Management System (4)
+startup_form: null
+correct_dependency_ids: {}
+renamed: true
+runtime_options:
+  version: 2
+  client_version: '3'
+  server_version: python3-sandbox
+  server_spec: null
+  server_spec_disabled: {requirements: '', base: python310-standard}
+dependencies: []
+metadata: {title: PUP | NALLRC ULMS, logo_img: 'asset:polytechnic_university_of_the_philippines_logo-logo.png'}
+services:
+- source: /runtime/services/tables.yml
+  client_config: {}
+  server_config: {}

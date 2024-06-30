@@ -1,0 +1,54 @@
+container: {type: ColumnPanel}
+components:
+- name: secContentPanel
+  properties: {background: '#800000'}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'RKTRIZ,HSKFLS'}
+  components:
+  - name: secFrame
+    properties: {role: outlined-card, background: '#80000', border: none, spacing_above: large, spacing_below: large, col_widths: '{}'}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'KIGBLY,STEYTS'}
+    components:
+    - name: secGridPanel1
+      properties: {spacing_above: none, spacing_below: none}
+      type: GridPanel
+      layout_properties: {grid_position: 'ERJFHT,VDRRKZ'}
+      components:
+      - name: cmdAccountBtn
+        properties: {text: Account, icon: 'fa:user-circle', bold: true, foreground: '#000000', spacing_above: none, spacing_below: none, align: left}
+        type: Button
+        layout_properties: {row: GHGJIU, width_xs: 5, col_xs: 0}
+        event_bindings: {click: cmdAccountBtn_click}
+      - name: cmdLogoutBtn
+        properties: {text: Logout, icon: 'fa:sign-out', bold: true, foreground: '#000000', spacing_above: none, spacing_below: none, align: right}
+        type: Button
+        layout_properties: {row: GHGJIU, width_xs: 5, col_xs: 7}
+        event_bindings: {click: cmdLogoutBtn_click}
+    - name: shpSpace1
+      properties: {height: 32}
+      type: Spacer
+      layout_properties: {grid_position: 'EGXJID,URKPZO'}
+    - name: lblH1Wlcm
+      properties: {text: Welcome to ULMS, foreground: '#800000', bold: true, font: '', font_size: 40, align: center, spacing_below: large}
+      type: Label
+      layout_properties: {grid_position: 'VUXWLV,QYMHML'}
+    - name: shpSpace3
+      properties: {height: 19}
+      type: Spacer
+      layout_properties: {grid_position: 'KJBRGP,ZESLLK'}
+    - name: cmdBooksBtn
+      properties: {text: Books, role: outlined-button, background: '#800000', foreground: '#FFFF', font_size: 20, spacing_below: large, bold: false, spacing_above: large}
+      type: Button
+      layout_properties: {grid_position: 'VWHXBD,VHREVK', full_width_row: false}
+      event_bindings: {click: cmdBooksBtn_click}
+    - name: cmdActivityBtn
+      properties: {text: Acitivity, role: outlined-button, foreground: '#000000', bold: false, font_size: 20, spacing_below: large, background: '#FFDF00'}
+      type: Button
+      layout_properties: {grid_position: 'IKLENJ,JGSWTU'}
+      event_bindings: {click: cmdFcltyBtn_click}
+    - name: shpSpace2
+      properties: {height: 32}
+      type: Spacer
+      layout_properties: {grid_position: 'ZIJHKE,AEGCXM'}
+is_package: true

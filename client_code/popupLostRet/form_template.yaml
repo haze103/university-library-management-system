@@ -1,0 +1,37 @@
+container: {type: ColumnPanel}
+components:
+- name: outlined_card_1
+  properties: {role: outlined-card, background: '#D9D9D9'}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'XYUOMP,PATAZY'}
+  components:
+  - name: label_1
+    properties: {text: Compensation}
+    type: Label
+    layout_properties: {grid_position: 'PRZRLA,JFBRTL'}
+  - name: drop_down_1
+    properties:
+      include_placeholder: false
+      items: [Payment, Replace]
+      placeholder: Compensation
+    type: DropDown
+    layout_properties: {grid_position: 'UUPKXV,MFDBBI'}
+  - name: cmdSaveBtn
+    properties: {role: filled-button, bold: false, spacing_above: large, background: '#DAA520', foreground: '#800000', spacing_below: medium, border: '', font_size: 18, text: Confirm}
+    type: Button
+    layout_properties: {grid_position: 'IOSPQU,DGMSXA'}
+    event_bindings: {click: cmdStudBtn_click}
+  - name: grid_panel_2
+    properties: {}
+    type: GridPanel
+    layout_properties: {grid_position: 'OLPYZG,IGIPLH'}
+    components:
+    - name: outlined_button_1_copy
+      properties: {text: Paid, role: outlined-button, foreground: '#000000'}
+      type: Button
+      layout_properties: {row: AYUNQR, width_xs: 4, col_xs: 1}
+    - name: outlined_button_1
+      properties: {text: To be Paid, role: outlined-button, foreground: '#000000'}
+      type: Button
+      layout_properties: {row: AYUNQR, width_xs: 4, col_xs: 7}
+is_package: true

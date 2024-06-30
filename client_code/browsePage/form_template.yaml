@@ -1,0 +1,64 @@
+container: {type: ColumnPanel}
+components:
+- name: secContentPanel
+  properties: {background: '#800000'}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'QWIMDI,VDMXSK'}
+  components:
+  - name: secFrame
+    properties: {role: outlined-card, background: '#80000', border: none, spacing_above: large, spacing_below: large}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'QHQDGU,AXBUMB'}
+    components:
+    - name: secGridPanel1
+      properties: {spacing_above: none, spacing_below: none}
+      type: GridPanel
+      layout_properties: {grid_position: 'PCXSIL,WUJALF'}
+      components:
+      - name: cmdHomeBtn
+        properties: {text: Home, icon: 'fa:home', bold: true, foreground: '#000000', spacing_above: none, spacing_below: none, align: left}
+        type: Button
+        layout_properties: {row: GHGJIU, width_xs: 3, col_xs: 0}
+        event_bindings: {click: cmdHomeBtn_click}
+      - name: cmdAccountBtn
+        properties: {text: Account, icon: 'fa:user-circle', bold: true, foreground: '#000000', spacing_above: none, spacing_below: none, align: left}
+        type: Button
+        layout_properties: {row: GHGJIU, width_xs: 4, col_xs: 3}
+        event_bindings: {click: cmdAccountBtn_click}
+      - name: cmdLogoutBtn
+        properties: {text: Logout, icon: 'fa:sign-out', bold: true, foreground: '#000000', spacing_above: none, spacing_below: none, align: right}
+        type: Button
+        layout_properties: {row: GHGJIU, width_xs: 5, col_xs: 7}
+        event_bindings: {click: cmdLogoutBtn_click}
+    - name: tblBookList
+      properties:
+        columns:
+        - {id: JKSDUP, title: Title, data_key: column_1, width: 386, expand: false}
+        - {id: VJQQOR, title: ISBN, data_key: column_2}
+        - {id: DABYWC, data_key: column_4, title: Status}
+        wrap_on: never
+      type: DataGrid
+      components:
+      - name: grid_panel_2
+        properties: {}
+        type: GridPanel
+        components:
+        - name: txtSearchBox
+          properties: {role: outlined, placeholder: Browse, spacing_above: medium, align: left}
+          type: TextBox
+          layout_properties: {row: QDXFQV, width_xs: 6, col_xs: 1}
+        - name: cmdSearchBtn
+          properties: {text: Search, role: tonal-button, background: '#000000', foreground: '#FFFFFF', icon: 'fa:search', align: left}
+          type: Button
+          layout_properties: {row: QDXFQV, width_xs: 4, col_xs: 7}
+          event_bindings: {click: cmdSearchBtn_click}
+      - name: secDataPanel
+        properties: {item_template: browsePage.RowTemplate4}
+        type: RepeatingPanel
+        event_bindings: {show: secDataPanel_show}
+      layout_properties: {grid_position: 'CRFOMC,SAOYBT'}
+    - name: shpSpace
+      properties: {height: 32}
+      type: Spacer
+      layout_properties: {grid_position: 'ZIJHKE,AEGCXM'}
+is_package: true

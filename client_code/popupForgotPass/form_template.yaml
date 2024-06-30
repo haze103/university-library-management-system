@@ -1,0 +1,39 @@
+container: {type: ColumnPanel}
+components:
+- name: secPopUp
+  properties: {role: outlined-card, background: 'theme:Secondary Container'}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'XYUOMP,PATAZY'}
+  components:
+  - name: secGridPanel
+    properties: {}
+    type: GridPanel
+    layout_properties: {grid_position: 'UDVKMY,WXBUHK'}
+    components:
+    - name: lblh2
+      properties: {text: Enter Your Email, bold: true, align: left, font_size: 20, underline: false, italic: false, foreground: ''}
+      type: Label
+      layout_properties: {row: WLRSVP, width_xs: 5, col_xs: 0}
+    - name: lblh2_1
+      properties: {text: Enter Verification Code, bold: true, align: left, font_size: 20, underline: false, italic: false, foreground: ''}
+      type: Label
+      layout_properties: {row: WLRSVP, width_xs: 5, col_xs: 6}
+    - name: txtEmail
+      properties: {role: outlined, placeholder: e.g. example@gmail.com, background: '#FFFFFF'}
+      type: TextBox
+      layout_properties: {row: ILGVUO, width_xs: 6, col_xs: 0}
+    - name: txtVerCode
+      properties: {role: outlined, placeholder: e.g. Ac431422, background: '#FFFFFF'}
+      type: TextBox
+      layout_properties: {row: ILGVUO, width_xs: 6, col_xs: 6}
+    - name: cmdVerifyBtn
+      properties: {role: filled-button, bold: false, spacing_above: large, background: '#000000', foreground: '#FFFFFF', spacing_below: medium, border: '', font_size: 18, text: Send Verification Code}
+      type: Button
+      layout_properties: {row: HTPSFZ, width_xs: 6, col_xs: 0}
+      event_bindings: {click: cmdStudBtn_click}
+    - name: cmdConfirmBtn
+      properties: {role: filled-button, bold: false, spacing_above: large, background: '#DAA520', foreground: '#800000', spacing_below: medium, border: '', font_size: 18, text: Confirm}
+      type: Button
+      layout_properties: {row: HTPSFZ, width_xs: 6, col_xs: 6}
+      event_bindings: {click: cmdStudBtn_click}
+is_package: true
