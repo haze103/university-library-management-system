@@ -19,8 +19,8 @@ class homePage(homePageTemplate):
     self.secContentPanel.add_component(browsePage())
 
   def cmdReserveBtn_click(self, **event_args):
-    sec_content_panel.clear()
-    sec_content_panel.add_component(borrowerSlipPage())
+    self.secContentPanel.clear()
+    self.secContentPanel.add_component(borrowerSlipPage())
 
 
 

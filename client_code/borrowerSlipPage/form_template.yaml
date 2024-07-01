@@ -33,11 +33,11 @@ components:
         properties: {spacing_above: small, spacing_below: none, text: ISBN, italic: false, bold: true}
         type: Label
         layout_properties: {row: TBMCGM, width_xs: 3, col_xs: 7}
-      - name: outlined_1
+      - name: txtUniqueID
         properties: {role: outlined, spacing_above: none, placeholder: Student Number, hide_text: false, background: 'theme:Primary Container'}
         type: TextBox
         layout_properties: {row: ZGCHHJ, width_xs: 4, col_xs: 1}
-      - name: outlined_3
+      - name: txtISBN
         properties: {role: outlined, placeholder: ISBN, background: 'theme:Primary Container'}
         type: TextBox
         layout_properties: {row: ZGCHHJ, width_xs: 4, col_xs: 7}
@@ -49,32 +49,33 @@ components:
         properties: {spacing_above: none, spacing_below: none, text: Title, bold: true}
         type: Label
         layout_properties: {row: WUQEBN, width_xs: 3, col_xs: 7}
-      - name: outlined_2
+      - name: txtName
         properties: {role: outlined, spacing_above: none, placeholder: Name, background: 'theme:Primary Container'}
         type: TextBox
         layout_properties: {row: AKVMAF, width_xs: 4, col_xs: 1}
-      - name: outlined_4
+      - name: txtBookTitle
         properties: {role: outlined, spacing_above: none, placeholder: Title, background: 'theme:Primary Container'}
         type: TextBox
         layout_properties: {row: AKVMAF, width_xs: 4, col_xs: 7}
       - name: label_1_copy_5
-        properties: {spacing_above: none, spacing_below: none, text: Date Start, bold: true}
+        properties: {spacing_above: none, spacing_below: none, text: Reservation Date, bold: true}
         type: Label
-        layout_properties: {row: QNMIKF, width_xs: 2, col_xs: 1}
+        layout_properties: {row: QNMIKF, width_xs: 3, col_xs: 1}
       - name: label_1_copy_5_copy
-        properties: {spacing_above: none, spacing_below: none, text: Date End, bold: true}
+        properties: {spacing_above: none, spacing_below: none, text: Borrowing Date, bold: true}
         type: Label
-        layout_properties: {row: QNMIKF, width_xs: 2, col_xs: 7}
-      - name: date_picker_1
+        layout_properties: {row: QNMIKF, width_xs: 3, col_xs: 7}
+      - name: cmdReservationDate
         properties: {}
         type: DatePicker
         layout_properties: {row: FTKBGA, width_xs: 3, col_xs: 1}
+        event_bindings: {change: cmdReservationDate_change}
       - name: date_picker_2
         properties: {}
         type: DatePicker
         layout_properties: {row: FTKBGA, width_xs: 3, col_xs: 7}
       - name: cmdConfBtn
-        properties: {role: filled-button, bold: true, spacing_above: large, background: '#DAA520', foreground: '#800000', spacing_below: medium, border: '', font_size: 20, text: Confirm}
+        properties: {role: filled-button, bold: false, spacing_above: large, background: '#DAA520', foreground: '#800000', spacing_below: medium, border: '', font_size: 20, text: Confirm}
         type: Button
         layout_properties: {row: DUZHHL, width_xs: 4, col_xs: 4}
         event_bindings: {click: cmdStudBtn_click}

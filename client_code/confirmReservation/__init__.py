@@ -12,22 +12,8 @@ class confirmReservation(confirmReservationTemplate):
       # Set Form properties and Data Bindings.
       self.init_components(**properties)
 
-    def cmdStudBtn_click(self, **event_args):
-      email = self.txtEmail.text
-      anvil.server.call('check_email', email)
-      ver_code = self.generate_ver_code()
+   # def cmdStudBtn_click(self, **event_args):
       
-      try:
-          anvil.server.call('send_email_code', email, ver_code)
-          alert("Email sent successfully!", title="Success")
-      except Exception as e:
-          alert(f"An error occurred while sending the email: {e}", title="Error")
-          print(f"Email send error: {e}")
 
-
-    def generate_ver_code(self):
-      alphanumeric_characters = string.ascii_letters + string.digits
-      ver_code = ''.join(random.sample(alphanumeric_characters, 8))
-      return ver_code
 
 
