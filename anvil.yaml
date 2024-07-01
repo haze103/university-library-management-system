@@ -232,9 +232,6 @@ db_schema:
     - name: strBookTitle
       admin_ui: {width: 200, order: 2}
       type: string
-    - name: datDatePublished
-      admin_ui: {width: 200, order: 4}
-      type: datetime
     - name: dblBookPrice
       admin_ui: {width: 200, order: 5}
       type: number
@@ -243,6 +240,9 @@ db_schema:
       type: string
     - name: strCategoryCode
       admin_ui: {order: 4.5, width: 200}
+      type: string
+    - name: datPublishedDate
+      admin_ui: {order: 4.75, width: 200}
       type: string
     title: tblBook
   tblloginsession:
