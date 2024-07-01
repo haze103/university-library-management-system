@@ -4,11 +4,13 @@ import anvil.server
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
-from ..welcomePage import welcomePage
+from ..homePage import homePage
 
 
 class basePage(basePageTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    self.secContentPanel.add_component(welcomePage())
+    self.secContentPanel.add_component(homePage())
+
+
