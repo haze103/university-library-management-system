@@ -53,16 +53,6 @@ def validate_user_credentials(strEmail, strPassword):
       return False
 
 @anvil.server.callable
-def confirm_reservation(strUserID, intIsbn, strTitle, datReserved):
-    reservation_row = app_tables.tblreservationlog.add_row(
-      strUserID=strUserID,
-      intISBN=intIsbn,
-      strBookTitle=strTitle,
-      datReserved=datReserved
-    )
-    return "Reservation confirmed successfully"
-
-@anvil.server.callable
 def validate_admin_ID(admin_id):
     strAdminAccount = app_tables.tbladmininformation.get(strAdminID=admin_id)
     

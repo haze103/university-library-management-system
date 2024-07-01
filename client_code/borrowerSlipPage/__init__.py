@@ -31,13 +31,6 @@ class borrowerSlipPage(borrowerSlipPageTemplate):
 
       if strResult == "Valid":
         alert(content=confirmReservation(), title="Confirm your reservation", large=True, buttons=[])
-        
-        if alert:
-          anvil.server.call('confirm_reservation', strUserID, intIsbn, strTitle, datReserved)
-          alert("Reservation confirmed successfully")
-        else:
-          alert("Reservation validation failed. Please check your details.")
-          
       else:
         alert(strResult)
 
