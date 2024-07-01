@@ -1,0 +1,21 @@
+container: {type: DataRowPanel}
+components:
+- type: Label
+  properties: {bold: true}
+  name: title
+  layout_properties: {column: FHJXND}
+  data_bindings:
+  - {property: text, code: 'self.item[''strBookTitle'']'}
+- type: Label
+  properties: {align: left, bold: true}
+  name: dtmRetD
+  layout_properties: {column: ISTQYJ}
+  data_bindings:
+  - {property: text, code: 'self.item[''datToReturn'']'}
+- type: Label
+  properties: {bold: true}
+  name: borrowerID
+  layout_properties: {column: AOHMXD}
+  data_bindings:
+  - {property: text, code: 'self.item[''intBorrowerLogID'']'}
+is_package: true

@@ -12,8 +12,6 @@ class homePage(homePageTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
 
-    # Any code you write here will run before the form opens.
-
   def cmdBooksBtn_click(self, **event_args):
     from ..browsePage import browsePage
     self.secContentPanel.clear()
@@ -25,13 +23,4 @@ class homePage(homePageTemplate):
 
   def cmdAdminBtn_click(self, **event_args):
     alert(content=adminIDConf(), title="Confirm your access level", large=True, buttons=[])
-
-
-
-
-
-
-
-  
-
-
+    

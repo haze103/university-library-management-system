@@ -12,21 +12,19 @@ class confirmReservation(confirmReservationTemplate):
       # Set Form properties and Data Bindings.
       self.init_components(**properties)
 
-   # def cmdStudBtn_click(self, **event_args):
-    def validate_credentials(self, email, password):
-      result = anvil.server.call('validate_user_credentials', email, password)
+    def validate_credentials(self, strEmail, strPassword):
+      result = anvil.server.call('validate_user_credentials', strEmail, strPassword)
       return result
 
     def cmdConfirmBtn_click(self, **event_args):
-        """This method is called when the button is clicked"""
-        email = self.txtEmail.text.strip()
-        password = self.txtPassword.text.strip()
+      strEmail = self.txtEmail.text.strip()
+      strPassword = self.txtPassword.text.strip()
 
-        if self.validate_credentials(email, password):
-            alert("Reservation Confirmed")
-            # Add any further logic here after successful validation
-        else:
-            alert("Invalid email or password. Please try again.")
+      if self.validate_credentials(strEmail, strPassword):
+        alert("Reservation Confirmed")
+        return True
+      else:
+        alert("Invalid email or password. Please try again.")
 
 
 

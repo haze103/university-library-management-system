@@ -13,18 +13,20 @@ class adminSignIn(adminSignInTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
 
-  # def cmdStudBtn_click(self, **event_args):
-  def validate_credentials(self, email, password):
-    result = anvil.server.call("validate_admin_credentials", email, password)
-    return result
+  def validate_credentials(self, strEmail, strPassword):
+    strResult = anvil.server.call("validate_admin_credentials", strEmail, strPassword)
+    return strResult
 
   def cmdConfirmBtn_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    email = self.txtEmail.text.strip()
-    password = self.txtPassword.text.strip()
+    strEmail = self.txtEmail.text.strip()
+    strPassword = self.txtPassword.text.strip()
 
-    if self.validate_credentials(email, password):
-      alert(title = "Access Granted. ", content = "You now have access to admin page")
-      # Add any further logic here after successful validation
+    if self.validate_credentials(strEmail, strPassword):
+      alert(title = "Access Granted. ", content = "You now have access to admin page", buttons=[])
+      self.navigate_to_adminPage()
     else:
       alert("Invalid email or password. Please try again.")
+
+  def navigate_to_adminPage(self):
+    self.clear()
+    open_form('adminPage')

@@ -178,6 +178,9 @@ db_schema:
     - name: intAdminAccountID
       admin_ui: {width: 200, order: 3}
       type: number
+    - name: strBookTitle
+      admin_ui: {width: 200, order: 4}
+      type: string
     title: tblBorrowerLog
   tblroles:
     client: none
@@ -288,6 +291,12 @@ db_schema:
     - name: dtmCancelled
       admin_ui: {width: 200, order: 4}
       type: datetime
+    - name: strReservedBookTitle
+      admin_ui: {width: 200, order: 5}
+      type: string
+    - name: intISBN
+      admin_ui: {width: 200, order: 6}
+      type: number
     title: tblReservationLog
   tblbookstatus:
     client: none

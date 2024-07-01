@@ -1,0 +1,29 @@
+is_package: true
+container:
+  type: DataRowPanel
+  properties: {align: left, bold: true}
+components:
+- type: Label
+  properties: {}
+  name: title
+  layout_properties: {column: JKSDUP}
+  data_bindings:
+  - {property: text, code: 'self.item[''strReservedBookTitle'']'}
+- type: Label
+  properties: {}
+  name: ISBN
+  layout_properties: {column: VJQQOR}
+  data_bindings:
+  - {property: text, code: 'self.item[''intISBN'']'}
+- type: Label
+  properties: {}
+  name: userID
+  layout_properties: {column: OJLQEN}
+  data_bindings:
+  - {property: text, code: 'self.item[''intUserAccountID'']'}
+- type: Label
+  properties: {}
+  name: dtmReserved
+  layout_properties: {column: FWBWWG}
+  data_bindings:
+  - {property: text, code: 'self.item[''dtmReserved'']'}

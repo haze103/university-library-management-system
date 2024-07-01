@@ -10,63 +10,81 @@ import string
 
 @anvil.server.callable
 def get_book_list():
-  return app_tables.tblbooks.search()
+    return app_tables.tblbooks.search()
 
 @anvil.server.callable
-def search_books(query):
+def search_books(strQuery):
     books = get_book_list()  # Retrieve the list of all books
   
-    if query:
-        filtered_books = [
-            book for book in books
-            if query.lower() in book['strBookTitle'].lower()
-            or query.lower() in book['intISBN']
-        ]
-        return filtered_books
+    if strQuery:
+      filtered_books = [
+        book for book in books
+        if strQuery.lower() in book['strBookTitle'].lower()
+        or strQuery.lower() in book['intISBN']
+      ]
+      return filtered_books
     else:
-        return books
+      return books
 
 @anvil.server.callable
-def validate_reservation_details(user_id, full_name, isbn, title, borrowed_date):
-  user_info_row = app_tables.tbluserinformation.get(strUniversityID=user_id, strUserFirstName=full_name.split()[0], strUserLastName=full_name.split()[-1])
-  book_row = app_tables.tblbooks.get(intISBN=isbn, strBookTitle=title)
+def validate_reservation_details(strUserID, strFullName, intIsbn, strTitle, datBorrowed):
+    strUserInfo = app_tables.tbluserinformation.get(strUniversityID=strUserID, strUserFirstName=strFullName.split()[0], strUserLastName=strFullName.split()[-1])
+    strBookInfo = app_tables.tblbooks.get(intISBN=intIsbn, strBookTitle=strTitle)
   
-  current_date = date.today()
-  if borrowed_date > current_date + timedelta(days=14):
+    datCurrent = date.today()
+    if datBorrowed > datCurrent + timedelta(days=14):
       return "Borrowed date should be within 2 weeks from the current date."
-  
-  if not user_info_row:
+    
+    if not strUserInfo:
       return "User information does not match."
-  
-  if not book_row:
+    
+    if not strBookInfo:
       return "Book information does not match."
-  
-  return "Valid"
+    
+    return "Valid"
 
 @anvil.server.callable
-def validate_user_credentials(email, password):
-    user_account = app_tables.tbluseraccounts.get(strUserEmail=email, strUserPassword=password)
+def validate_user_credentials(strEmail, strPassword):
+    strUserAccount = app_tables.tbluseraccounts.get(strUserEmail=strEmail, strUserPassword=strPassword)
     
-    if user_account:
-        return True
+    if strUserAccount:
+      return True
     else:
-        return False
+      return False
 
+@anvil.server.callable
+def confirm_reservation(strUserID, intIsbn, strTitle, datReserved):
+    reservation_row = app_tables.tblreservationlog.add_row(
+      strUserID=strUserID,
+      intISBN=intIsbn,
+      strBookTitle=strTitle,
+      datReserved=datReserved
+    )
+    return "Reservation confirmed successfully"
 
 @anvil.server.callable
 def validate_admin_ID(admin_id):
-    admin_account = app_tables.tbladmininformation.get(strAdminID=admin_id)
+    strAdminAccount = app_tables.tbladmininformation.get(strAdminID=admin_id)
     
-    if admin_account:
-        return True
+    if strAdminAccount:
+      return True
     else:
-        return False
+      return False
 
 @anvil.server.callable
-def validate_admin_credentials(email, password):
-    admin_login = app_tables.tbladminaccounts.get(strAdminEmail=email, strAdminPassword=password)
+def validate_admin_credentials(strEmail, strPassword):
+    strAdminLogin = app_tables.tbladminaccounts.get(strAdminEmail=strEmail, strAdminPassword=strPassword)
     
-    if admin_login:
-        return True
+    if strAdminLogin:
+      return True
     else:
-        return False
+      return False
+
+@anvil.server.callable
+def get_reserved_books():
+    return app_tables.tblreservationlog.search()
+
+
+@anvil.server.callable
+def get_currently_borrowed_books():
+    return app_tables.tblborrowerlog.search()

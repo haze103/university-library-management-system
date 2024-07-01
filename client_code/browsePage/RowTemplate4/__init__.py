@@ -13,20 +13,18 @@ class RowTemplate4(RowTemplate4Template):
     self.init_components(**properties)
 
   def cmdStatusBtn_click(self, **event_args):
-    # Access the parent containers to find secContentPanel
-    parent_panel_1 = self.parent
-    parent_panel_2 = parent_panel_1.parent
-    parent_panel_3 = parent_panel_2.parent
-    parent_panel_4 = parent_panel_3.parent
-    parent_panel_5 = parent_panel_4.parent
-    sec_content_panel = parent_panel_5.secContentPanel  # To access the secContentPanel
+    secPanel1 = self.parent
+    secPanel2 = secPanel1.parent
+    secPanel3 = secPanel2.parent
+    secPanel4 = secPanel3.parent
+    secPanel5 = secPanel4.parent
+    secMainContentPanel = secPanel5.secContentPanel  # To access the secContentPanel
+
+    strBtnTxt = self.cmdStatusBtn.text.lower()
     
-    button_text = self.cmdStatusBtn.text.lower()
-    
-    if button_text == "available":
-        sec_content_panel.clear()
-        sec_content_panel.add_component(borrowerSlipPage())
+    if strBtnTxt == "available":
+        secMainContentPanel.clear()
+        secMainContentPanel.add_component(borrowerSlipPage())
     else:
-        # Book is unavailable, show alert message
         alert("Book is currently unavailable.")
 

@@ -10,26 +10,34 @@ from datetime import date
 
 class borrowerSlipPage(borrowerSlipPageTemplate):
     def __init__(self, **properties):
-        self.init_components(**properties)
-        self.cmdReservationDate.date = date.today() 
-        self.cmdReservationDate.enabled = False
+      # Set Form properties and Data Bindings.
+      self.init_components(**properties)
+      self.cmdReservationDate.date = date.today() 
+      self.cmdReservationDate.enabled = False
 
     def cmdHomeBtn_click(self, **event_args):
-        from ..homePage import homePage
-        self.secContentPanel.clear()
-        self.secContentPanel.add_component(homePage())
+      from ..homePage import homePage
+      self.secContentPanel.clear()
+      self.secContentPanel.add_component(homePage())
 
     def cmdConfBtn_click(self, **event_args):
-        user_id = self.txtUniqueID.text.strip()
-        full_name = self.txtName.text.strip()
-        isbn = self.txtISBN.text.strip()
-        title = self.txtBookTitle.text.strip()
-        borrowed_date = self.txtDateBorrowed.date
+      strUserID = self.txtUniqueID.text.strip()
+      strFullName = self.txtName.text.strip()
+      intIsbn = self.txtISBN.text.strip()
+      strTitle = self.txtBookTitle.text.strip()
+      datBorrowed = self.txtDateBorrowed.date
 
-        result = anvil.server.call('validate_reservation_details', user_id, full_name, isbn, title, borrowed_date)
+      strResult = anvil.server.call('validate_reservation_details', strUserID, strFullName, intIsbn, strTitle, datBorrowed)
 
-        if result == "Valid":
-            alert(content=confirmReservation(), title="Confirm your reservation", large=True, buttons=[])
+      if strResult == "Valid":
+        alert(content=confirmReservation(), title="Confirm your reservation", large=True, buttons=[])
+        
+        if alert:
+          anvil.server.call('confirm_reservation', strUserID, intIsbn, strTitle, datReserved)
+          alert("Reservation confirmed successfully")
         else:
-            alert(result)
+          alert("Reservation validation failed. Please check your details.")
+          
+      else:
+        alert(strResult)
 

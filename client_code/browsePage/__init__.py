@@ -8,13 +8,13 @@ import anvil.server
 
 class browsePage(browsePageTemplate):
     def __init__(self, **properties):
+      # Set Form properties and Data Bindings.
       self.init_components(**properties)
-
       self.secDataPanel.items = anvil.server.call('get_book_list')
 
     def cmdSearchBtn_click(self, **event_args):
-      search_item = self.txtSearchBox.text
-      self.secDataPanel.items = anvil.server.call('search_books', search_item)
+      strSearchItem = self.txtSearchBox.text
+      self.secDataPanel.items = anvil.server.call('search_books', strSearchItem)
 
     def cmdHomeBtn_click(self, **event_args):
       from ..homePage import homePage

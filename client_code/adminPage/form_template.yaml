@@ -1,0 +1,92 @@
+container: {type: ColumnPanel}
+components:
+- name: secContentPanel
+  properties: {background: '#800000'}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'RKTRIZ,HSKFLS'}
+  components:
+  - name: secFrame
+    properties: {role: outlined-card, background: '#80000', border: none, spacing_above: large, spacing_below: large, col_widths: '{}'}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'KIGBLY,STEYTS'}
+    components:
+    - name: shpSpace1
+      properties: {height: 32}
+      type: Spacer
+      layout_properties: {grid_position: 'EGXJID,URKPZO'}
+    - name: outlined_card_1
+      properties: {role: outlined-card, background: 'theme:Primary'}
+      type: ColumnPanel
+      layout_properties: {grid_position: 'BDLKAE,UFSQEO'}
+      components:
+      - name: label_1
+        properties: {bold: true, text: Reserved Books, foreground: '#FFFFFF', font_size: 30, align: center}
+        type: Label
+        layout_properties: {grid_position: 'EWHUVN,SSOYLF'}
+    - name: outlined_card_2
+      properties: {role: outlined-card, col_widths: '', spacing_above: small, background: 'theme:Primary Container', wrap_on: mobile, col_spacing: medium, foreground: '', spacing_below: small, visible: true, border: '', tooltip: ''}
+      type: ColumnPanel
+      layout_properties: {grid_position: 'JAQILZ,FXARRR'}
+      components:
+      - name: tblReserved
+        properties:
+          columns:
+          - {id: JKSDUP, title: Title, data_key: column_1, width: 296, expand: false}
+          - {id: VJQQOR, title: ISBN, data_key: column_2, width: 199, expand: false}
+          - {id: OJLQEN, title: User ID, data_key: column_3, width: 180, expand: false}
+          - {id: FWBWWG, data_key: column_1, title: 'Reservation Date and Time '}
+          rows_per_page: 10
+        type: DataGrid
+        components:
+        - name: dataPanel1
+          properties: {item_template: adminPage.RowTemplate1}
+          type: RepeatingPanel
+        layout_properties: {grid_position: 'IOWEKO,AOSRJC'}
+    - name: shpSpace2
+      properties: {height: 32}
+      type: Spacer
+      layout_properties: {grid_position: 'ZIJHKE,AEGCXM'}
+    - name: outlined_card_1_copy
+      properties: {role: outlined-card, background: 'theme:On Primary Container'}
+      type: ColumnPanel
+      layout_properties: {grid_position: 'KSBJJR,BMHCXQ'}
+      components:
+      - name: label_1_copy
+        properties: {bold: true, text: Borrowed Books, foreground: '#FFFFFF', font_size: 30, align: center}
+        type: Label
+        layout_properties: {grid_position: 'EWHUVN,SSOYLF'}
+    - name: outlined_card_2_copy
+      properties: {role: outlined-card, background: 'theme:Primary Container', col_widths: '{}'}
+      type: ColumnPanel
+      layout_properties: {grid_position: 'BAMLXL,GPVQHU'}
+      components:
+      - type: DataGrid
+        properties:
+          role: null
+          spacing_above: small
+          columns:
+          - {id: FHJXND, title: Title, data_key: column_1, $$hashKey: 'object:50151', width: 386, expand: false}
+          - {id: ISTQYJ, title: Return Date, data_key: column_2, $$hashKey: 'object:50152', width: 255, expand: false}
+          - {id: AOHMXD, title: Borrower Log ID, data_key: column_3, $$hashKey: 'object:50153'}
+          background: ''
+          rows_per_page: 10
+          wrap_on: never
+          foreground: ''
+          show_page_controls: true
+          auto_header: true
+          spacing_below: small
+          visible: true
+          border: ''
+          tooltip: ''
+        name: tblBorrowed
+        layout_properties: {grid_position: 'BCCJPI,QYFIAJ'}
+        components:
+        - type: RepeatingPanel
+          properties: {spacing_above: none, spacing_below: none, item_template: adminPage.RowTemplate2}
+          name: dataPanel2
+          layout_properties: {}
+    - name: shpSpace2_copy
+      properties: {height: 32}
+      type: Spacer
+      layout_properties: {grid_position: 'ECKSFV,DDIQZZ'}
+is_package: true
