@@ -152,26 +152,3 @@ def search_books(query):
         return filtered_books
     else:
         return books
-
-
-
-@anvil.server.callable
-def send_email_code(email, ver_code):
-    api_key = os.environ['MJ_APIKEY_PUBLIC']
-    api_secret = os.environ['MJ_APIKEY_PRIVATE']
-    mailjet = Client(auth=(api_key, api_secret), version='v3')
-    data = {
-      'FromEmail': "ulms@mailjet.com",
-      'FromName': "University Library Management System",
-      'Recipients': [
-        {
-          "Email": email,
-        }
-      ],
-      'Subject': "Verification Code for ULMS",
-      'Text-part': ver_code,
-    }
-    result = mailjet.send.create(data=data)
-    print (result.status_code)
-    print (result.json())
-

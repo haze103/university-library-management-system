@@ -20,16 +20,6 @@ components:
         type: Button
         layout_properties: {row: GHGJIU, width_xs: 3, col_xs: 0}
         event_bindings: {click: cmdHomeBtn_click}
-      - name: cmdAccountBtn
-        properties: {text: Account, icon: 'fa:user-circle', bold: true, foreground: '#000000', spacing_above: none, spacing_below: none, align: left}
-        type: Button
-        layout_properties: {row: GHGJIU, width_xs: 4, col_xs: 3}
-        event_bindings: {click: cmdAccountBtn_click}
-      - name: cmdLogoutBtn
-        properties: {text: Logout, icon: 'fa:sign-out', bold: true, foreground: '#000000', spacing_above: none, spacing_below: none, align: right}
-        type: Button
-        layout_properties: {row: GHGJIU, width_xs: 5, col_xs: 7}
-        event_bindings: {click: cmdLogoutBtn_click}
     - name: tblBookList
       properties:
         columns:

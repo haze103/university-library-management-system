@@ -241,9 +241,9 @@ db_schema:
     - name: strBookStatus
       admin_ui: {width: 200, order: 6}
       type: string
-    - name: intCategoryID
-      admin_ui: {order: 3, width: 200}
-      type: number
+    - name: strCategoryCode
+      admin_ui: {order: 4.5, width: 200}
+      type: string
     title: tblBook
   tblloginsession:
     client: none
