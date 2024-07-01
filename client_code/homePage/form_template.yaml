@@ -40,11 +40,11 @@ components:
       type: Button
       layout_properties: {grid_position: 'IKLENJ,JGSWTU'}
       event_bindings: {click: cmdReserveBtn_click}
-    - name: cmdHistoryBtn
+    - name: cmdAdminBtn
       properties: {text: Admin, role: outlined-button, background: '#000000', foreground: '#FFFFFF', font_size: 20, spacing_below: medium, bold: true, icon: 'fa:lock'}
       type: Button
       layout_properties: {grid_position: 'SAFBLE,CLQFAH'}
-      event_bindings: {click: cmdHistoryBtn_click}
+      event_bindings: {click: cmdAdminBtn_click}
     - name: lblH4Terms
       properties: {content: 'By using this service, you understood and agree to the PUP Online Services {link1} and {link2}', format: markdown, enable_slots: true, align: center, font: '', font_size: 16}
       type: RichText

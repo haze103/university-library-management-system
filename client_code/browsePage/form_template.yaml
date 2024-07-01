@@ -22,11 +22,23 @@ components:
         event_bindings: {click: cmdHomeBtn_click}
     - name: tblBookList
       properties:
+        role: null
+        spacing_above: small
         columns:
-        - {id: JKSDUP, title: Title, data_key: column_1, width: 386, expand: false}
-        - {id: VJQQOR, title: ISBN, data_key: column_2}
-        - {id: DABYWC, data_key: column_4, title: Status}
+        - {id: JKSDUP, title: Title, data_key: column_1, width: 314, expand: false, $$hashKey: 'object:36612'}
+        - {id: XOOPAG, data_key: column_1, title: Author, $$hashKey: 'object:36613'}
+        - {id: VJQQOR, title: ISBN, data_key: column_2, $$hashKey: 'object:36614'}
+        - {id: DABYWC, data_key: column_4, title: Status, $$hashKey: 'object:36615'}
+        background: ''
+        rows_per_page: 10
         wrap_on: never
+        foreground: ''
+        show_page_controls: true
+        auto_header: true
+        spacing_below: small
+        visible: true
+        border: ''
+        tooltip: ''
       type: DataGrid
       components:
       - name: grid_panel_2
