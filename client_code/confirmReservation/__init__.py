@@ -1,4 +1,4 @@
-from ._anvil_designer import popupForgotPassTemplate
+from ._anvil_designer import confirmReservationTemplate
 from anvil import *
 import anvil.server
 import anvil.tables as tables
@@ -7,7 +7,7 @@ from anvil.tables import app_tables
 import random
 import string
 
-class popupForgotPass(popupForgotPassTemplate):
+class confirmReservation(confirmReservationTemplate):
     def __init__(self, **properties):
       # Set Form properties and Data Bindings.
       self.init_components(**properties)

@@ -10,10 +10,6 @@ components:
     type: GridPanel
     layout_properties: {grid_position: 'ZGLWBI,KEGIHT'}
     components:
-    - name: label_2
-      properties: {text: Account, icon: 'fa:user-circle', bold: true, align: right, font_size: 15}
-      type: Label
-      layout_properties: {row: GHGJIU, width_xs: 2, col_xs: 8}
     - name: label_3
       properties: {text: Logout, icon: 'fa:sign-out', bold: true, font_size: 15}
       type: Label

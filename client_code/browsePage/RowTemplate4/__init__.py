@@ -4,7 +4,7 @@ import anvil.server
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
-from ...studentBorrowerSlipPage import studentBorrowerSlipPage
+from ...borrowerSlipPage import borrowerSlipPage
 
 
 class RowTemplate4(RowTemplate4Template):
@@ -19,13 +19,13 @@ class RowTemplate4(RowTemplate4Template):
     parent_panel_3 = parent_panel_2.parent
     parent_panel_4 = parent_panel_3.parent
     parent_panel_5 = parent_panel_4.parent
-    sec_content_panel = parent_panel_5.secContentPanel  # Access the secContentPanel here
+    sec_content_panel = parent_panel_5.secContentPanel  # To access the secContentPanel
     
     button_text = self.cmdStatusBtn.text.lower()
     
     if button_text == "available":
         sec_content_panel.clear()
-        sec_content_panel.add_component(studentBorrowerSlipPage())
+        sec_content_panel.add_component(borrowerSlipPage())
     else:
         # Book is unavailable, show alert message
         alert("Book is currently unavailable.")

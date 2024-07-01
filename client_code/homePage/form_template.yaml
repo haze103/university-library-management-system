@@ -35,11 +35,11 @@ components:
       type: Button
       layout_properties: {grid_position: 'VWHXBD,VHREVK', full_width_row: false}
       event_bindings: {click: cmdBooksBtn_click}
-    - name: cmdActivityBtn
+    - name: cmdReserveBtn
       properties: {text: Borrow, role: outlined-button, foreground: '#000000', bold: true, font_size: 20, spacing_below: large, background: '#FFDF00', icon: 'fa:edit'}
       type: Button
       layout_properties: {grid_position: 'IKLENJ,JGSWTU'}
-      event_bindings: {click: cmdFcltyBtn_click}
+      event_bindings: {click: cmdReserveBtn_click}
     - name: cmdHistoryBtn
       properties: {text: Admin, role: outlined-button, background: '#000000', foreground: '#FFFFFF', font_size: 20, spacing_below: medium, bold: true, icon: 'fa:lock'}
       type: Button

@@ -4,6 +4,7 @@ import anvil.server
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
+from ..borrowerSlipPage import borrowerSlipPage
 
 class homePage(homePageTemplate):
   def __init__(self, **properties):
@@ -16,6 +17,11 @@ class homePage(homePageTemplate):
     from ..browsePage import browsePage
     self.secContentPanel.clear()
     self.secContentPanel.add_component(browsePage())
+
+  def cmdReserveBtn_click(self, **event_args):
+    sec_content_panel.clear()
+    sec_content_panel.add_component(borrowerSlipPage())
+
 
 
 
