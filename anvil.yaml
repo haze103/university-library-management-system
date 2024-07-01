@@ -27,11 +27,11 @@ db_schema:
     client: none
     server: full
     columns:
-    - name: intCategoryID
-      admin_ui: {width: 200, order: 0}
-      type: number
     - name: strCategoryName
       admin_ui: {width: 200, order: 1}
+      type: string
+    - name: strCategoryCode
+      admin_ui: {width: 200, order: 0}
       type: string
     title: tblCategory
   tblbook:
